@@ -10,7 +10,7 @@ main screen
 
 รายละเอียด
 
-<img src = "https://user-images.githubusercontent.com/69613390/142462360-d0238a07-71b6-4cc3-9564-ef76318f8608.pngg" width = "250">
+<img src = "https://user-images.githubusercontent.com/69613390/142462360-d0238a07-71b6-4cc3-9564-ef76318f8608.png" width = "250">
 
 ปุ่มเปิดเว็บ
 
