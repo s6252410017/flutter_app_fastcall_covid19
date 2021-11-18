@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app_fastcall_covid19/views/listcall_covid_ui.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class HomeUI extends StatelessWidget {
   const HomeUI({Key? key}) : super(key: key);
 
@@ -17,6 +16,7 @@ class HomeUI extends StatelessWidget {
       ),
     );
     return Scaffold(
+      backgroundColor: Colors.lightBlue[50],
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -24,7 +24,7 @@ class HomeUI extends StatelessWidget {
               SizedBox(
                 height: 80.0,
               ),
-              Padding(
+              /* Padding(
                 padding: const EdgeInsets.only(
                   left: 50.0,
                 ),
@@ -36,13 +36,13 @@ class HomeUI extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
+              ), */
               SizedBox(
-                height: 110.0,
+                height: 150.0,
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 50.0,
+                  left: 130.0,
                 ),
                 child: Row(
                   children: [
@@ -53,6 +53,7 @@ class HomeUI extends StatelessWidget {
                         fontSize: 40.0,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.2, //ระยะห่างของแต่ละตัวอักษร
+                        color: Colors.deepPurple,
                       ),
                     ),
                   ],
@@ -60,7 +61,7 @@ class HomeUI extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 50.0,
+                  left: 130.0,
                 ),
                 child: Row(
                   children: [
@@ -71,6 +72,7 @@ class HomeUI extends StatelessWidget {
                         fontSize: 40.0,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.2, //ระยะห่างของแต่ละตัวอักษร
+                        color: Colors.deepPurple[900],
                       ),
                     ),
                   ],
@@ -78,24 +80,25 @@ class HomeUI extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 50.0,
+                  left: 20.0,
                 ),
                 child: Row(
                   children: [
                     Text(
-                      'โควิด',
+                      '\"โควิด\"',
                       style: TextStyle(
                         fontFamily: 'Kanit',
-                        fontSize: 40.0,
+                        fontSize: 120.0,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.2, //ระยะห่างของแต่ละตัวอักษร
+                        color: Colors.redAccent[700],
                       ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: 200.0,
+                height: 100.0,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -107,7 +110,7 @@ class HomeUI extends StatelessWidget {
                   );
                 },
                 child: Text(
-                  'เข้าดู',
+                  'เข้าชม',
                   style: TextStyle(
                     fontFamily: 'kanit',
                     fontSize: 25.0,
@@ -119,7 +122,7 @@ class HomeUI extends StatelessWidget {
                     MediaQuery.of(context).size.width - 100.0,
                     60.0,
                   ),
-                  primary: Colors.cyan[300],
+                  primary: Colors.lightBlue[400],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                       60.0,
@@ -139,7 +142,6 @@ class HomeUI extends StatelessWidget {
                       fontFamily: 'Kanit',
                     ),
                   ),
-                  
                 ],
               ),
             ],

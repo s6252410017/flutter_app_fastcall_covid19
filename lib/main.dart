@@ -7,7 +7,7 @@ void main(List<String> args) {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListcallCovidUI() ,
+      home: HomeUI() ,
       theme: ThemeData(
         fontFamily: 'Kanit',
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fastcall_covid19/models/covid.dart';
+import 'package:flutter_app_fastcall_covid19/views/listcall_fastcall_ui.dart';
 import 'listcall_detail_ui.dart';
 
 class ListcallCovidUI extends StatefulWidget {
@@ -27,7 +28,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       mobile: '1422',
       image: 'f2.jpg',
       location: 'https://goo.gl/maps/3RvVQBvZkmbYhST4A',
-      facelink: '',
+      facelink: 'https://www.facebook.com/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B9%82%E0%B8%A3%E0%B8%84-%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%A3%E0%B8%A7%E0%B8%87%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%AA%E0%B8%B8%E0%B8%82-470988516420706/',
     ),
     Covid(
       name: 'กรมการแพทย์',
@@ -36,7 +37,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       mobile: '1668',
       image: 'f3.jpg',
       location: 'https://goo.gl/maps/SJDPC67dcSKTN7vH7',
-      facelink: '',
+      facelink: 'https://www.facebook.com/%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C-643148052494633/',
     ),
     Covid(
       name: 'สถาบันการแพทย์ฉุกเฉินแห่งชาติ',
@@ -45,7 +46,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       mobile: '1669',
       image: 'f4.jpg',
       location: 'https://goo.gl/maps/3PsUcaWG4s7fJYie7',
-      facelink: '',
+      facelink: 'https://www.facebook.com/niem1669',
     ),
     Covid(
       name: 'ศูนย์การแพทย์ฉุกเฉิน กทม.',
@@ -54,7 +55,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       mobile: '1646',
       image: 'f5.jpg',
       location: 'https://goo.gl/maps/aDQmkam5xnoAEynm7',
-      facelink: '',
+      facelink: 'https://www.facebook.com/bangkokems',
     ),
     Covid(
       name: 'กรมสุขภาพจิต',
@@ -63,7 +64,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       mobile: '1323',
       image: 'f6.jpg',
       location: 'https://goo.gl/maps/j6oRQPpusdkzfZhw9',
-      facelink: '',
+      facelink: 'https://www.facebook.com/THAIDMH',
     ),
   ];
 
@@ -87,8 +88,8 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.3,
             child: Image.asset(
-              'assets/images/Covid19.jpg',
-              fit: BoxFit.cover,
+              'assets/images/bgdrawer.jpg',
+              fit: BoxFit.fill,
             ),
           ),
           Expanded(
@@ -148,11 +149,11 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
+             /*  currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage(
                   'assets/images/vclogo.png',
                 ),
-              ),
+              ), */
               accountName: Text(
                 '',
               ),
@@ -162,7 +163,7 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    'assets/images/bgdrawer.jpg',
+                    'assets/images/bgdrawer1.jpg',
                   ),
                   fit: BoxFit.fill,
                 ),
@@ -180,7 +181,14 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
               ),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ListcallFastcallUI(),
+                        ),
+                      );
+              },
               title: Text(
                 'สายด่วน (โทรเลย)',
               ),
