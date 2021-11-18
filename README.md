@@ -24,3 +24,11 @@ main screen
 ปุ่มพิกัด
 
 <img src = "https://user-images.githubusercontent.com/69613390/141333505-888e6cd9-3903-480f-833b-82e052388aca.png" width = "250">
+
+Drawer
+
+<img src = "https://user-images.githubusercontent.com/69613390/142388542-595a381a-825e-436f-81eb-4244d1003977.png" width = "250">
+
+ปุ่ม Facebook กดได้
+<img src = "https://user-images.githubusercontent.com/69613390/142388690-79158b5b-5929-4e77-886c-efd916d298db.png" width = "250">
+
