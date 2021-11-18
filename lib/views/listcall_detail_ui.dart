@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fastcall_covid19/models/covid.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,6 +11,7 @@ class ListcallDetailUI extends StatefulWidget {
   String mobile = '';
   String image = '';
   String location = '';
+  String facelink = '';
 
   Covid? foodListDetail;
 
@@ -23,6 +23,7 @@ class ListcallDetailUI extends StatefulWidget {
     required this.mobile,
     required this.image,
     required this.location,
+    required this.facelink,
   }) : super(key: key);
 
   @override
@@ -55,14 +56,15 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
 
   @override
   Widget build(BuildContext context) {
+    var imageStrings = ['assets/images/bg.jpg'];
     return Scaffold(
-      backgroundColor: Colors.cyan[200],
+      backgroundColor: Colors.lightBlue[100],
       appBar: AppBar(
         title: Text(
           'รายละเอียดสายด่วนCovid',
         ),
         centerTitle: true,
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.lightBlue[400],
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -88,19 +90,20 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                   height: 50.0,
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width - 40.0,
+                  width: MediaQuery.of(context).size.width - 1.0,
                   //height: 100.0,
                   child: Card(
-                    color: Colors.cyan[300],
+                    color: Colors.lightBlue[200],
                     elevation: 10.0,
                     shadowColor: Colors.cyan,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                        5.0,
+                        20.0,
                       ),
                     ),
                     child: Column(
                       children: [
+                        
                         Padding(
                           padding: const EdgeInsets.all(
                             10.0,
@@ -116,10 +119,10 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                             ],
                           ),
                         ),
-                        Divider(
+                        /*  Divider(
                           color: Colors.grey[600],
-                        ),
-                        Padding(
+                        ), */
+                        /*  Padding(
                           padding: const EdgeInsets.all(
                             10.0,
                           ),
@@ -144,10 +147,10 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                               ),
                             ],
                           ),
-                        ),
-                        Divider(
+                        ), */
+                        /* Divider(
                           color: Colors.grey[600],
-                        ),
+                        ), */
                         Padding(
                           padding: const EdgeInsets.all(
                             10.0,
@@ -161,6 +164,8 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                                 '   Facebook:  ' + widget.facebook,
                                 style: TextStyle(
                                   color: Colors.grey[800],
+                                  fontSize: 12.2,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Expanded(
@@ -177,9 +182,9 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                             ],
                           ),
                         ),
-                        Divider(
+                        /* Divider(
                           color: Colors.grey[600],
-                        ),
+                        ), */
                         Padding(
                           padding: const EdgeInsets.all(
                             10.0,
@@ -222,10 +227,15 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                         'เปิดเว็บ',
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.cyan[500],
+                        primary: Colors.lightBlue[400],
                         fixedSize: Size(
                           130.0,
                           50.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            50.0,
+                          ),
                         ),
                       ),
                     ),
@@ -242,10 +252,15 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                         'โทรเลย',
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.cyan[500],
+                        primary: Colors.lightBlue[400],
                         fixedSize: Size(
                           130.0,
                           50.0,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            50.0,
+                          ),
                         ),
                       ),
                     ),
@@ -262,14 +277,54 @@ class _ListcallDetailUIState extends State<ListcallDetailUI> {
                         'พิกัด',
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.cyan[500],
+                        primary: Colors.lightBlue[400],
                         fixedSize: Size(
                           120.0,
                           50.0,
                         ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            50.0,
+                          ),
+                        ),
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    //เปิดเว็บ
+                    setState(() {
+                      _launchInBrowser(widget.facelink);
+                    });
+                  },
+                  icon: Icon(
+                    FontAwesomeIcons.facebook,
+                  ),
+                  label: Text(
+                    'Facebook',
+                    style: TextStyle(
+                      fontFamily: 'Kanit',
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(
+                      280,
+                      50.0,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        50.0,
+                      ),
+                    ),
+                    primary: Color(0xFF1877f2),
+                  ),
+                ),
+                SizedBox(
+                  height: 30.0,
                 ),
               ],
             ),

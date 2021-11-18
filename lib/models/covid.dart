@@ -5,6 +5,7 @@ class Covid {
   String mobile = '';
   String image = '';
   String location = '';
+  String facelink = '';
   //พิกัด
 
   Covid({
@@ -14,6 +15,7 @@ class Covid {
     required this.mobile,
     required this.image,
     required this.location,
+    required this.facelink,
     //พิกัด
   });
 }

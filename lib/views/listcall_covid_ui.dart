@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fastcall_covid19/models/covid.dart';
-
 import 'listcall_detail_ui.dart';
 
-
-
-
 class ListcallCovidUI extends StatefulWidget {
-  const ListcallCovidUI({ Key? key }) : super(key: key);
+  const ListcallCovidUI({Key? key}) : super(key: key);
 
   @override
   _ListcallCovidUIState createState() => _ListcallCovidUIState();
@@ -21,8 +17,8 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       facebook: 'สำนักงานหลักประกันสุขภาพแห่งชาติ',
       mobile: '1330',
       image: 'f1.png',
-      location:
-          'https://goo.gl/maps/3whWtBQDWbBAcf1k7',
+      location: 'https://goo.gl/maps/3whWtBQDWbBAcf1k7',
+      facelink: 'https://www.facebook.com/NHSO.Thailand/',
     ),
     Covid(
       name: 'กรมควบคุมโรค',
@@ -30,8 +26,8 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       facebook: 'กรมควบคุมโรค กระทรวงสาธารณสุข',
       mobile: '1422',
       image: 'f2.jpg',
-      location:
-          'https://goo.gl/maps/3RvVQBvZkmbYhST4A',
+      location: 'https://goo.gl/maps/3RvVQBvZkmbYhST4A',
+      facelink: '',
     ),
     Covid(
       name: 'กรมการแพทย์',
@@ -39,17 +35,17 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       facebook: 'กรมการแพทย์',
       mobile: '1668',
       image: 'f3.jpg',
-      location:
-          'https://goo.gl/maps/SJDPC67dcSKTN7vH7',
+      location: 'https://goo.gl/maps/SJDPC67dcSKTN7vH7',
+      facelink: '',
     ),
     Covid(
       name: 'สถาบันการแพทย์ฉุกเฉินแห่งชาติ',
       website: 'https://www.niems.go.th/1/Home/Main',
-      facebook: 'สถาบันการแพทย์ฉุกเฉินแห่งชาติ -สพฉ.1669',
+      facebook: 'สถาบันการแพทย์ฉุกเฉินแห่งชาติ-สพฉ.1669',
       mobile: '1669',
       image: 'f4.jpg',
-      location:
-          'https://goo.gl/maps/3PsUcaWG4s7fJYie7',
+      location: 'https://goo.gl/maps/3PsUcaWG4s7fJYie7',
+      facelink: '',
     ),
     Covid(
       name: 'ศูนย์การแพทย์ฉุกเฉิน กทม.',
@@ -57,8 +53,8 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       facebook: 'ศูนย์เอราวัณ กรุงเทพมหานคร',
       mobile: '1646',
       image: 'f5.jpg',
-      location:
-          'https://goo.gl/maps/aDQmkam5xnoAEynm7',
+      location: 'https://goo.gl/maps/aDQmkam5xnoAEynm7',
+      facelink: '',
     ),
     Covid(
       name: 'กรมสุขภาพจิต',
@@ -66,22 +62,24 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
       facebook: 'กรมสุขภาพจิต กระทรวงสาธารณสุข',
       mobile: '1323',
       image: 'f6.jpg',
-      location:
-          'https://goo.gl/maps/j6oRQPpusdkzfZhw9',
+      location: 'https://goo.gl/maps/j6oRQPpusdkzfZhw9',
+      facelink: '',
     ),
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan[200],
+      backgroundColor: Colors.lightBlue[100],
       appBar: AppBar(
         title: Text(
           'สายด่วนสำคัญช่วงโควิด',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.lightBlue[400],
       ),
       body: Column(
         children: [
@@ -89,60 +87,140 @@ class _ListcallCovidUIState extends State<ListcallCovidUI> {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.3,
             child: Image.asset(
-              'assets/images/Covid19.jpg'
+              'assets/images/Covid19.jpg',
+              fit: BoxFit.cover,
             ),
           ),
           Expanded(
-          child: ListView.separated(
-            separatorBuilder: (context, index) {
-              return Divider(
-                height: 10.0,
-                color: Colors.cyan[200],
-              );
-            },
-            itemCount: covid.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                onTap: () {
-                  //เปิดไปหน้า ListFoodDetailUI
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        //ที่หน้า ListfoodDetailUI มีการสร้างตัวแปรรับค่า
-                        //ดังนั้นในการเปิดไปหน้า ListfoodDetailUI เราจึงต้องส่งข้อมูลไปด้วย
-                        return ListcallDetailUI(
-                          name: covid[index].name,
-                          website: covid[index].website,
-                          facebook: covid[index].facebook,
-                          mobile: covid[index].mobile,
-                          image: covid[index].image,
-                          location: covid[index].location,
-                        );
-                      },
-                    ),
-                  );
-                },
-                title: Text(
-                  covid[index].name,
-                ),
-                subtitle: Text(
-                  covid[index].mobile,
-                ),
-                leading: ClipOval(
-                  child: Image.asset(
-                    'assets/images/' + covid[index].image,
+            child: ListView.separated(
+              separatorBuilder: (context, index) {
+                return Divider(
+                  height: 50.0,
+                  color: Colors.cyan[200],
+                );
+              },
+              itemCount: covid.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  onTap: () {
+                    //เปิดไปหน้า ListFoodDetailUI
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          //ที่หน้า ListfoodDetailUI มีการสร้างตัวแปรรับค่า
+                          //ดังนั้นในการเปิดไปหน้า ListfoodDetailUI เราจึงต้องส่งข้อมูลไปด้วย
+                          return ListcallDetailUI(
+                            name: covid[index].name,
+                            website: covid[index].website,
+                            facebook: covid[index].facebook,
+                            mobile: covid[index].mobile,
+                            image: covid[index].image,
+                            location: covid[index].location,
+                            facelink: covid[index].facelink,
+                          );
+                        },
+                      ),
+                    );
+                  },
+                  title: Text(
+                    covid[index].name,
                   ),
-                ),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                ),
-              );
-            },
+                  subtitle: Text(
+                    covid[index].mobile,
+                  ),
+                  leading: ClipOval(
+                    child: Image.asset(
+                      'assets/images/' + covid[index].image,
+                    ),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios,
+                  ),
+                );
+              },
+            ),
           ),
-        ),
-
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage(
+                  'assets/images/vclogo.png',
+                ),
+              ),
+              accountName: Text(
+                '',
+              ),
+              accountEmail: Text(
+                '',
+              ),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/bgdrawer.jpg',
+                  ),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              /* otherAccountsPictures: [
+                Image.asset(
+                  'assets/images/vclogo.png',
+                ),
+              ], */
+            ),
+            ListTile(
+              onTap: () {},
+              title: Text(
+                'หน้าแรก',
+              ),
+            ),
+            ListTile(
+              onTap: () {},
+              title: Text(
+                'สายด่วน (โทรเลย)',
+              ),
+              leading: Icon(
+                Icons.phone_android_outlined,
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              onTap: () {},
+              title: Text(
+                'จำนวนผู้ติดเชื้อวันนี้',
+              ),
+              leading: Icon(
+                Icons.person,
+                color: Colors.blue,
+              ),
+              trailing: Text(
+                '999',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Divider(
+              color: Colors.red,
+            ),
+            ListTile(
+              onTap: () {},
+              title: Text(
+                'ออกจาการใช้งาน',
+              ),
+              trailing: Icon(
+                Icons.exit_to_app,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

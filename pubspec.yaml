@@ -40,6 +40,7 @@ dependencies:
   url_launcher: ^6.0.12 #package ใช้่โทร เปิดเว็บ ส่งsms ส่งemail
   flutter_native_splash: ^1.3.1
 
+
 flutter_native_splash:
   image: assets/images/logo.png
   color: "#03C0DA"
@@ -51,6 +52,12 @@ flutter_native_splash:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
